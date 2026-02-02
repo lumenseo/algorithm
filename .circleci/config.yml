@@ -8,9 +8,9 @@ jobs:
       - run:
           name: Push to organization repo
           command: |
-            git config --global user.name {user.name}
-            git config --global user.email {user.email}
-            git remote add org https://x-access-token:${ORG_PUSH_PAT}@github.com/{오가니제이션 이름}/{레포 이름}.git
+            git config --global user.name "lumenseo"
+            git config --global user.email "leslumiere1@gmail.com"
+            git remote add org https://x-access-token:${ORG_PUSH_PAT}@github.com/SSAFY-15/SW_study_SMK.git
             git push org main --force
 workflows:
   mirror-to-org:
