@@ -1,30 +1,18 @@
-import sys
-sys.setrecursionlimit(10**6)
-
-
-# 시작값: 1
-# 끝점 : N // 2
-# num: 1씩 증가하는 숫자, acc_list : 약수 리스트
-def recur(num, acc_list):
-    if num > N // 2:
-        return acc_list
-    
-    # 약수 체크
-    if N % num == 0:
-        acc_list.append(num)
-    
-    return recur(num + 1, acc_list)
-
-
 while True:
     N = int(input())
-
     if N == -1:
         break
-
-    divisors = recur(1, [])
-
-    if sum(divisors) == N:
-        print(f'{N} = {" + ".join(map(str, divisors))}')
+    a = []
+    for i in range(2, N+1):
+        if N % i == 0:
+            
+            a.append(N // i)
+    if sum(a) == N:
+        print(f'{N} =', end = " ")
+        while a:
+            print(f'{a.pop()}', end = " ")
+            if a:
+                print('+', end = " ")
+        print("")
     else:
         print(f'{N} is NOT perfect.')
