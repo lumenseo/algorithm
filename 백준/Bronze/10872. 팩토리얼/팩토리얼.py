@@ -1,14 +1,9 @@
-result=1
-
 def factorial(num):
-    global result
-    if num<=1:
-        return
+    if num <=1:
+        return 1
     
-    result*=num
-
-    factorial(num-1)
+    return num*factorial(num-1)
 
 N=int(input())
-factorial(N)
+result=factorial(N)
 print(result)
